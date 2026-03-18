@@ -1,6 +1,6 @@
 import { Employee } from './lib/employee';
-import { Calendar } from './lib/calendar';
-import { Engine } from './lib/engine';
+import { HDate } from './lib/calendar';
+import { ComputeNbHolidays } from './lib/engine';
 
 /**
  * entité employé
@@ -30,3 +30,35 @@ import { Engine } from './lib/engine';
 // Example TypeScript file
 const greeting: string = "Hello, TypeScript!";
 console.log(greeting);
+
+const emp = new Employee();
+
+// Test cases with various date ranges
+const testCases = [
+  { days: 3, label: "3 days" },
+  { days: 5, label: "5 days" },
+  { days: 10, label: "10 days" },
+  { days: 20, label: "20 days" },
+];
+
+testCases.forEach(testCase => {
+  const begin = new HDate();
+  const end = new HDate();
+  
+  begin.date = new Date(2026, 3, 1); // April 1, 2026
+  begin.morning = true;
+  begin.afternoon = true;
+  
+  end.date = new Date(2026, 3, 1 + testCase.days - 1); // Calculate end date
+  end.morning = true;
+  end.afternoon = true;
+  
+  const [ok, halfDays, majoredDays] = ComputeNbHolidays(emp, begin, end);
+  
+  console.log(`\n${testCase.label}:`);
+  console.log(`  From: ${begin.date.toDateString()}`);
+  console.log(`  To: ${end.date.toDateString()}`);
+  console.log(`  Valid: ${ok}`);
+  console.log(`  Half days consumed: ${halfDays}`);
+  console.log(`  Majored days: ${majoredDays}`);
+});
