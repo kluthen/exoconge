@@ -22,5 +22,5 @@ export function IsHoliday(date : HDate) : boolean {
 export function IsDayOfWork(emp: Employee, date: HDate) : [boolean /*am*/, boolean /*pm*/, ] {
     let dow = DayOfWeek(date);
     if(IsHoliday(date)) return [false, false];
-    return [emp.week[dow].morning == 1, emp.week[dow].afternoon == 1];
+    return [emp.week[dow].morning === 1, emp.week[dow].afternoon === 1];
 }

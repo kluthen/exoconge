@@ -60,5 +60,12 @@ testCases.forEach(testCase => {
   console.log(`  To: ${end.date.toDateString()}`);
   console.log(`  Valid: ${ok}`);
   console.log(`  Half days consumed: ${halfDays}`);
-  console.log(`  Majored days: ${majoredDays}`);
+  
+  // Count total majorations
+  let totalMajored = 0;
+  for (const day of Object.keys(majoredDays)) {
+    const dayData = majoredDays[day as any as keyof typeof majoredDays];
+    totalMajored += dayData.morning + dayData.afternoon;
+  }
+  console.log(`  Total majorations: ${totalMajored}`);
 });
