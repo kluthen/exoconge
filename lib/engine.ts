@@ -7,7 +7,7 @@ export class Engine {
 
 function CountHalfDays(emp: Employee, begin: HDate, end: HDate): number {
     let count = 0;
-    const currentDate = { date: begin.date, morning: begin.morning, afternoon: begin.afternoon };
+    const currentDate = { date: new Date(begin.date), morning: begin.morning, afternoon: begin.afternoon };
     const endDate = end;
 
     while (currentDate.date <= endDate.date) {
@@ -48,7 +48,7 @@ function CountHalfDays(emp: Employee, begin: HDate, end: HDate): number {
 
 
 function SeekMajored(emp: Employee, begin: HDate, end: HDate): HDate[] {
-    const currentDate = { date: begin.date, morning: begin.morning, afternoon: begin.afternoon };
+    const currentDate = { date: new Date(begin.date), morning: begin.morning, afternoon: begin.afternoon };
     const endDate = end;
     let res : HDate[]= []
 
