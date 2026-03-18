@@ -16,7 +16,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "exec": "tsc && node dist/index.js"
+    "exec": "tsc && cp holidays.json dist/lib/ && node dist/index.js"
   },
   "devDependencies": {
     "@types/node": "^25.5.0",
