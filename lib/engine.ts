@@ -31,7 +31,7 @@ function CountHalfDays(emp: Employee, begin: HDate, end: HDate): number {
         }
 
         // Count afternoon if it's a work day and the specific half day is marked as work
-        if (currentDate < endDate || (currentDate.date.getTime() === endDate.date.getTime() && end.afternoon)) {
+        if (currentDate.date < endDate.date || (currentDate.date.getTime() === endDate.date.getTime() && end.afternoon)) {
             if (workSchedule.afternoon) {
                 count++;
             }
@@ -64,7 +64,7 @@ function SeekMajored(emp: Employee, begin: HDate, end: HDate): HDate[] {
         } 
 
         if(workSchedule.majored) {
-            res.push(currentDate);
+            res.push({date: new Date(currentDate.date), morning: true, afternoon: true});
         }
 
         currentDate.date.setDate(currentDate.date.getDate() + 1);
