@@ -12,14 +12,14 @@ export class HDate {
 
 
 
-function DayOfWeek(date: Date) : Dow {
+function DayOfWeek(date: HDate) : DoW {
 
 }
 
-function IsHoliday(date : Date) : boolean {
+function IsHoliday(date : HDate) : boolean {
 
 }
 
-function IsDayOfWork(date: Date) : [boolean /*am*/, boolean /*pm*/] {
+function IsDayOfWork(date: HDate) : [boolean /*am*/, boolean /*pm*/] {
 
 }

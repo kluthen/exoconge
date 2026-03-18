@@ -1,10 +1,11 @@
-import { DoW } from "./calendar";
+import { DoW, HDate } from "./calendar";
+import { Employee } from "./employee";
 
 export class Engine {
 
 }
 
-export function ComputeNbHolidays(emp: Employee, begin :Date, end: Date): [boolean/* OK*/, number /* nb half day consumed*/, DoW[]/*majored consummed*/]{
+export function ComputeNbHolidays(emp: Employee, begin: HDate, end: HDate): [boolean/* OK*/, number /* nb half day consumed*/, DoW[]/*majored consummed*/]{
     // Phase 1: voler des slips
     // Compter le nombre de demi journée
     // virer les dimanches, jour fériers, jour non travaillé par le gus.
