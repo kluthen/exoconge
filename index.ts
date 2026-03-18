@@ -26,3 +26,7 @@ import { Engine } from './lib/engine';
  *
  * return bool congéValide + nombre de jour congé pris et nombre de jour congé restant
  */
+
+// Example TypeScript file
+const greeting: string = "Hello, TypeScript!";
+console.log(greeting);
