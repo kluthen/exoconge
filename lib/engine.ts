@@ -7,10 +7,10 @@ export class Engine {
 
 function CountHalfDays(emp: Employee, begin: HDate, end: HDate): number {
     let count = 0;
-    const currentDate = { date: begin.date, morning: begin.morning, afternoon: begin.afternoon };
+    const currentDate = { date: new Date(begin.date), morning: begin.morning, afternoon: begin.afternoon };
     const endDate = end;
 
-    while (currentDate <= endDate) {
+    while (currentDate.date <= endDate.date) {
         const dayOfWeek = DayOfWeek({ date: currentDate.date, morning: true, afternoon: true }) as DoW;
         const workSchedule = emp.week[dayOfWeek];
         const [am, pm] = IsDayOfWork(emp,currentDate);
@@ -48,11 +48,11 @@ function CountHalfDays(emp: Employee, begin: HDate, end: HDate): number {
 
 
 function SeekMajored(emp: Employee, begin: HDate, end: HDate): HDate[] {
-    const currentDate = { date: begin.date, morning: begin.morning, afternoon: begin.afternoon };
+    const currentDate = { date: new Date(begin.date), morning: begin.morning, afternoon: begin.afternoon };
     const endDate = end;
     let res : HDate[]= []
 
-    while (currentDate <= endDate) {
+    while (currentDate.date <= endDate.date) {
         const dayOfWeek = DayOfWeek({ date: currentDate.date, morning: true, afternoon: true }) as DoW;
         const workSchedule = emp.week[dayOfWeek];
         const [am, pm] = IsDayOfWork(emp, currentDate);
@@ -113,12 +113,12 @@ export function ComputeNbHolidays(emp: Employee, begin: HDate, end: HDate): [boo
         const dow = DayOfWeek(element);
         const mm = emp.week[dow];
         if( mm.morning && element.morning && emp.majored[dow].morning < 5){
-            emp.majored[dow].morning ++;
+            //emp.majored[dow].morning ++;
             recap[dow].morning++;
             halfDaysCount++;
         }
         if( mm.afternoon && element.afternoon && emp.majored[dow].afternoon < 5){
-            emp.majored[dow].afternoon ++;
+            //emp.majored[dow].afternoon ++;
             recap[dow].afternoon++;
             halfDaysCount++;
         }
