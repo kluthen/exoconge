@@ -1,6 +1,7 @@
-class Employee {
+import { Employee } from './lib/employee';
+import { Calendar } from './lib/calendar';
+import { Engine } from './lib/engine';
 
-}
 /**
  * entité employé
  *
