@@ -14,3 +14,5 @@ typeDemande: [1, 2, 3, 4] avec 1 = congés payés
 - Il ne faut jamais compter les jours fériés dans le décompte
 - Une personne à temps partiel en jours ouvrés doit avoir le même décompte (définition des 10 demi-journées à retirer)
 - Les jours de fériés en France sont disponibles en JSON sur le site: https://www.data.gouv.fr/datasets/jours-feries-en-france
+
+
