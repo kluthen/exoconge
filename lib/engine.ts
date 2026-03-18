@@ -113,12 +113,12 @@ export function ComputeNbHolidays(emp: Employee, begin: HDate, end: HDate): [boo
         const dow = DayOfWeek(element);
         const mm = emp.week[dow];
         if( mm.morning && element.morning && emp.majored[dow].morning < 5){
-            emp.majored[dow].morning ++;
+            //emp.majored[dow].morning ++;
             recap[dow].morning++;
             halfDaysCount++;
         }
         if( mm.afternoon && element.afternoon && emp.majored[dow].afternoon < 5){
-            emp.majored[dow].afternoon ++;
+            //emp.majored[dow].afternoon ++;
             recap[dow].afternoon++;
             halfDaysCount++;
         }
