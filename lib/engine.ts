@@ -10,7 +10,7 @@ function CountHalfDays(emp: Employee, begin: HDate, end: HDate): number {
     const currentDate = { date: begin.date, morning: begin.morning, afternoon: begin.afternoon };
     const endDate = end;
 
-    while (currentDate <= endDate) {
+    while (currentDate.date <= endDate.date) {
         const dayOfWeek = DayOfWeek({ date: currentDate.date, morning: true, afternoon: true }) as DoW;
         const workSchedule = emp.week[dayOfWeek];
         const [am, pm] = IsDayOfWork(emp,currentDate);
@@ -52,7 +52,7 @@ function SeekMajored(emp: Employee, begin: HDate, end: HDate): HDate[] {
     const endDate = end;
     let res : HDate[]= []
 
-    while (currentDate <= endDate) {
+    while (currentDate.date <= endDate.date) {
         const dayOfWeek = DayOfWeek({ date: currentDate.date, morning: true, afternoon: true }) as DoW;
         const workSchedule = emp.week[dayOfWeek];
         const [am, pm] = IsDayOfWork(emp, currentDate);
