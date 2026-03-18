@@ -4,8 +4,10 @@ export class Calendar {
 
 export type DoW = "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday" | "Saturday" | "Sunday";
 
-export class Date {
-
+export class HDate {
+    date: Date = new Date();
+    morning: boolean = true;
+    afternnon: boolean = true;
 }
 
 
